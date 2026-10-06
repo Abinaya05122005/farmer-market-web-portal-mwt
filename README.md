@@ -1,84 +1,104 @@
-# 🌾 AnnaSanthai — Farmer Market Web Portal
+# 🌾 Farmer Market Web Portal (விவசாய சந்தை வலைவாசல்)
 
-A complete, no-build-step web portal connecting farmers directly with buyers,
-built with **HTML, CSS, JavaScript and React** (loaded via CDN + Babel, so
-you can just open the file — no `npm install` needed).
+A modern, full-stack marketplace connecting Farmers directly with Buyers, complete with dedicated Delivery Partner logistics, Admin management, MySQL database persistence, and an intelligent AI Voice Assistant.
 
-## ✨ Features
+---
 
-- **Marketplace** — browse fresh produce by category, search by crop or village, add to basket, checkout.
-- **Farmer Dashboard** — list new produce with name, category, price, unit and stock.
-- **AI Price Advisor** — an on-device "AI" tool that suggests a fair price range for a new listing, based on category market baseline, seasonality and stock pressure. No API key required.
-- **FarmMate AI Chat** — a real generative-AI chat assistant (bottom-right bubble) powered by **Anthropic's Claude API**, that answers questions about pricing, storage, seasonality and produce selection.
-- **Cart & checkout**, **login/signup (buyer or farmer role)**, toasts, and a fully responsive, custom-designed UI — all persisted with `localStorage` so data survives a page refresh.
+## 📁 Project Architecture
 
-## 📁 Project structure
+The project is structured into two clean, self-contained directories:
 
 ```
 farmer-market-portal/
-├── index.html          # entry point (loads React/Babel from CDN)
-├── css/
-│   └── style.css        # full design system + all component styles
-├── js/
-│   ├── data.js           # seed products, categories, localStorage helpers
-│   ├── ai.js              # AI Price Advisor + FarmMate AI (Claude API) wrapper
-│   └── app.js             # all React components + app state
-└── README.md
+├── backend/                       # Node.js + Express REST API Server
+│   ├── config/                    # MySQL database connection pool & schemas
+│   ├── controllers/               # Auth, Orders, Products, Receipt PDF, Voice controllers
+│   ├── middleware/                # JWT verification & role authorization
+│   ├── models/                    # Data models & validation
+│   ├── routes/                    # API endpoints (/api/auth, /api/orders, /api/products)
+│   ├── store/                     # Persistent storage helpers
+│   ├── server.js                  # Express backend entry point (Port 3001)
+│   ├── package.json               # Backend dependencies
+│   └── .env                       # Backend secrets, DB credentials, AI API keys
+│
+├── frontend/                      # React 18 + Vite + Tailwind CSS Single-Page App
+│   ├── public/                    # Static assets & images
+│   ├── src/                       # React components, pages, contexts, hooks, utilities
+│   ├── dist/                      # Production build distribution
+│   ├── index.html                 # HTML template
+│   ├── vite.config.js             # Vite configuration with /api proxy to Port 3001
+│   ├── tailwind.config.js         # Tailwind theme & color tokens
+│   ├── postcss.config.js          # PostCSS configuration
+│   ├── package.json               # Frontend dependencies
+│   └── .env                       # Client environment variables (VITE_GOOGLE_CLIENT_ID)
+│
+├── farmer_market.sql             # MySQL database schema & sample data dump
+├── package.json                  # Root runner scripts
+└── README.md                     # Documentation
 ```
 
-## ▶️ How to run
+---
 
-No build tools, no npm, no server required:
+## 🚀 How to Run
 
-1. Download/unzip the `farmer-market-portal` folder.
-2. Double-click `index.html` (or right-click → "Open with" your browser).
+### 1. Database (MySQL via XAMPP)
+- Start MySQL in **XAMPP Control Panel** (or `mysqld` service on port `3306`).
+- Ensure the database `farmer_market` exists. The server auto-creates all necessary tables (`users`, `products`, `orders`) upon first start.
 
-That's it — React, ReactDOM and Babel are loaded from a CDN and the JSX is
-compiled live in the browser.
+---
 
-> If you prefer a local server (recommended for the AI chat's `fetch` calls
-> to work smoothly in some browsers), you can run:
-> ```bash
-> npx serve .
-> ```
-> or, with Python installed:
-> ```bash
-> python3 -m http.server 8000
-> ```
-> then open `http://localhost:8000`.
+### 2. Running from Root (Convenience Scripts)
 
-## 🤖 Using FarmMate AI (the Claude-powered chat)
+You can run commands directly from the project root:
 
-1. Click the round chat bubble in the bottom-right corner.
-2. Paste your own **Anthropic API key** (get one at https://console.anthropic.com) into the box shown — it's stored only in your browser's `localStorage`, never sent anywhere except directly to Anthropic's API.
-3. Start chatting — ask about crop prices, storage tips, or what's in season.
+```bash
+# Start Backend server (Port 3001)
+npm run start
+# or
+npm run dev:backend
 
-⚠️ **Security note for real deployments:** calling `api.anthropic.com`
-directly from browser JavaScript (as this demo does, for simplicity) exposes
-whatever API key is used to anyone inspecting network traffic. For a real
-production app, move this call to a small backend/serverless proxy that
-holds the API key server-side, and have the browser call *your* backend
-instead.
+# Start Frontend Vite dev server (Port 5173)
+npm run dev:frontend
 
-## 🎨 Design system
+# Build Frontend for production
+npm run build
+```
 
-- **Colours:** Soil brown, leaf green, marigold gold, wheat cream — evoking an Indian farmers' market / harvest palette.
-- **Type:** Zilla Slab (display, stamped market-signage feel) + Work Sans (body) + JetBrains Mono (prices/data).
-- **Signature element:** a hand-stamped, rotated "AI Verified Price" badge on product cards that used the AI Price Advisor.
+---
 
-## 🛠️ Tech stack
+### 3. Running Frontend and Backend Independently
 
-| Layer | Tech |
-|---|---|
-| Markup | HTML5 |
-| Styling | Hand-written CSS3 (custom properties / design tokens) |
-| Logic & UI | React 18 (via CDN, JSX compiled in-browser with Babel standalone) |
-| AI | Custom heuristic price model + Anthropic Claude Messages API |
-| Persistence | Browser `localStorage` (no backend/database required for this demo) |
+#### Option A: Backend Only
+```bash
+cd backend
+npm install    # (First time only)
+npm start      # Starts on http://localhost:3001
+```
 
-## 📌 Possible extensions
+#### Option B: Frontend Only
+```bash
+cd frontend
+npm install    # (First time only)
+npm run dev    # Starts on http://localhost:5173
+```
 
-- Swap `localStorage` for a real backend (Node/Express + MongoDB or Firebase) so data is shared across devices.
-- Add image upload for produce photos.
-- Add order history and farmer earnings dashboard.
-- Move the Claude API call behind a backend proxy for production security.
+---
+
+## 🔐 Environment Variables (`.env`)
+
+- **`backend/.env`**:
+  - `PORT=3001`
+  - `DB_HOST=127.0.0.1`, `DB_PORT=3306`, `DB_USER=root`, `DB_PASSWORD=`, `DB_NAME=farmer_market`
+  - `GEMINI_API_KEY`, `OPENAI_API_KEY`, `GROQ_API_KEY`
+  - `GOOGLE_CLIENT_ID`
+- **`frontend/.env`**:
+  - `VITE_GOOGLE_CLIENT_ID` (client-safe for Google Sign-In button)
+
+---
+
+## 👥 User Roles & Login
+
+- **Buyer**: Browse organic crops, add to cart, place orders, download PDF receipts.
+- **Farmer**: List produce, manage inventory, accept/reject buyer orders, update harvest status.
+- **Delivery Partner**: View assigned logistics orders, confirm pickup, update delivery milestones.
+- **Admin**: Platform oversight, user management, order auditing.
