@@ -104,7 +104,7 @@ export default function LoginModal() {
 
   const handleGoogleLogin = async () => {
     setIsLoading(true);
-    const res = await loginWithGoogle(selectedRole);
+    const res = await loginWithGoogle(selectedRole, email);
     setIsLoading(false);
 
     if (res && res.success) {

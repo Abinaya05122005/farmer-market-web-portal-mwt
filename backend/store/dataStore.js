@@ -467,7 +467,14 @@ class DataStore {
         if (rows && rows.length > 0) {
           return rows.map((r) => {
             const org = Boolean(r.is_organic ?? r.isOrganic);
-            return { ...r, isOrganic: org, is_organic: org };
+            return {
+              ...r,
+              price: parseFloat(r.price) || 0,
+              stock: parseInt(r.stock, 10) || 0,
+              rating: parseFloat(r.rating) || 5.0,
+              isOrganic: org,
+              is_organic: org,
+            };
           });
         }
       } catch (e) {
@@ -476,7 +483,14 @@ class DataStore {
     }
     return this.products.map((p) => {
       const org = Boolean(p.is_organic ?? p.isOrganic);
-      return { ...p, isOrganic: org, is_organic: org };
+      return {
+        ...p,
+        price: parseFloat(p.price) || 0,
+        stock: parseInt(p.stock, 10) || 0,
+        rating: parseFloat(p.rating) || 5.0,
+        isOrganic: org,
+        is_organic: org,
+      };
     });
   }
 
@@ -488,7 +502,14 @@ class DataStore {
         if (rows && rows.length > 0) {
           return rows.map((r) => {
             const org = Boolean(r.is_organic ?? r.isOrganic);
-            return { ...r, isOrganic: org, is_organic: org };
+            return {
+              ...r,
+              price: parseFloat(r.price) || 0,
+              stock: parseInt(r.stock, 10) || 0,
+              rating: parseFloat(r.rating) || 5.0,
+              isOrganic: org,
+              is_organic: org,
+            };
           });
         }
       } catch (e) {

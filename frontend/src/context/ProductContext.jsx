@@ -41,8 +41,13 @@ export const ProductProvider = ({ children }) => {
       if (res.ok) {
         const data = await res.json();
         if (data.success && Array.isArray(data.products) && data.products.length > 0) {
-          setProducts(data.products);
-          localStorage.setItem('farmstore_products', JSON.stringify(data.products));
+          const sanitized = data.products.map((p) => ({
+            ...p,
+            price: Number(p.price || 0),
+            stock: Number(p.stock || 0),
+          }));
+          setProducts(sanitized);
+          localStorage.setItem('farmstore_products', JSON.stringify(sanitized));
         }
       }
     } catch (e) {

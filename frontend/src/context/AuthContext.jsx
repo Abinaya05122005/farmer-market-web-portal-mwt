@@ -211,10 +211,10 @@ export const AuthProvider = ({ children }) => {
     };
   };
 
-  const loginWithGoogle = async (selectedRole = 'buyer') => {
+  const loginWithGoogle = async (selectedRole = 'buyer', emailHint = '') => {
     try {
       // 1. Launch official Google Account Chooser popup & get authenticated Google profile
-      const googleProfile = await promptGoogleSignIn();
+      const googleProfile = await promptGoogleSignIn(emailHint);
 
       // 2. Send verified Google profile to backend API for MySQL database insertion & JWT token
       const response = await fetch('/api/auth/google', {

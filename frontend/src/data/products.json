@@ -4,7 +4,7 @@
     "name": "Country Ripe Tomatoes",
     "category": "Vegetables",
     "subCategory": "Tomatoes",
-    "price": 35.95,
+    "price": 35.97,
     "unit": "kg",
     "stock": 120,
     "rating": 4.9,
@@ -27,14 +27,14 @@
     "mandiMarket": "Coimbatore / Kovilpatti APMC Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 3500,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "veg-2",
     "name": "Farm Fresh Red Potatoes",
     "category": "Vegetables",
     "subCategory": "Root Vegetables",
-    "price": 36.99,
+    "price": 37.02,
     "unit": "kg",
     "stock": 250,
     "rating": 4.8,
@@ -57,14 +57,14 @@
     "mandiMarket": "Coimbatore / Mettupalayam Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 3600,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "veg-3",
     "name": "Small Sambar Shallots (Onions)",
     "category": "Vegetables",
     "subCategory": "Root Vegetables",
-    "price": 74.03,
+    "price": 74.07,
     "unit": "kg",
     "stock": 180,
     "rating": 4.9,
@@ -87,14 +87,14 @@
     "mandiMarket": "Dharapuram / Dindigul Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 7200,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "veg-4",
     "name": "Sweet Ooty Orange Carrots",
     "category": "Vegetables",
     "subCategory": "Root Vegetables",
-    "price": 49.38,
+    "price": 49.41,
     "unit": "kg",
     "stock": 140,
     "rating": 4.9,
@@ -117,14 +117,14 @@
     "mandiMarket": "Nilgiris (Ooty) / Mettupalayam APMC",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 4800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "veg-5",
     "name": "Crisp Green Cabbage",
     "category": "Vegetables",
     "subCategory": "Cruciferous",
-    "price": 28.82,
+    "price": 27.16,
     "unit": "piece",
     "stock": 90,
     "rating": 4.7,
@@ -147,14 +147,14 @@
     "mandiMarket": "Coimbatore / Oddanchatram Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 2800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "veg-6",
     "name": "Fresh Snow-White Cauliflower",
     "category": "Vegetables",
     "subCategory": "Cruciferous",
-    "price": 38.8,
+    "price": 38.82,
     "unit": "piece",
     "stock": 75,
     "rating": 4.8,
@@ -177,14 +177,14 @@
     "mandiMarket": "Talavadi / Coimbatore Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 4000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "veg-7",
     "name": "Tender Purple Brinjal (Eggplant)",
     "category": "Vegetables",
     "subCategory": "Solanums",
-    "price": 33,
+    "price": 33.02,
     "unit": "kg",
     "stock": 85,
     "rating": 4.6,
@@ -207,14 +207,14 @@
     "mandiMarket": "Vellore / Coimbatore APMC",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 3400,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "veg-8",
     "name": "Crisp Tender Okra (Ladies Finger)",
     "category": "Vegetables",
     "subCategory": "Pod Vegetables",
-    "price": 36.91,
+    "price": 36.93,
     "unit": "kg",
     "stock": 110,
     "rating": 4.8,
@@ -237,14 +237,14 @@
     "mandiMarket": "Oddanchatram / Kovilpatti Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 3800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "veg-9",
     "name": "Deep Crimson Beetroots",
     "category": "Vegetables",
     "subCategory": "Root Vegetables",
-    "price": 36.93,
+    "price": 36.95,
     "unit": "kg",
     "stock": 130,
     "rating": 4.7,
@@ -267,14 +267,14 @@
     "mandiMarket": "Nilgiris / Coimbatore Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 3800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "veg-10",
     "name": "Spicy Fresh Green Chillies",
     "category": "Vegetables",
     "subCategory": "Peppers",
-    "price": 64.73,
+    "price": 64.77,
     "unit": "pack",
     "stock": 160,
     "rating": 4.9,
@@ -297,14 +297,14 @@
     "mandiMarket": "Andipatti / Theni Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 6500,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-1",
     "name": "Alphonso Mango (Hapus)",
     "category": "Fruits",
     "subCategory": "Tropical",
-    "price": 236.69,
+    "price": 236.83,
     "unit": "kg",
     "stock": 80,
     "rating": 5,
@@ -327,14 +327,14 @@
     "mandiMarket": "Salem / Krishnagiri APMC Mandi",
     "mandiSource": "eNAM",
     "wholesaleRatePerQuintal": 24000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-2",
     "name": "Robusta Golden Bananas",
     "category": "Fruits",
     "subCategory": "Tropical",
-    "price": 49.34,
+    "price": 49.37,
     "unit": "dozen",
     "stock": 200,
     "rating": 4.8,
@@ -357,14 +357,14 @@
     "mandiMarket": "Tiruchirappalli / Theni Banana Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 4000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-3",
     "name": "Crisp Shimla Royal Apples",
     "category": "Fruits",
     "subCategory": "Temperate",
-    "price": 177.73,
+    "price": 177.84,
     "unit": "kg",
     "stock": 110,
     "rating": 4.9,
@@ -387,14 +387,14 @@
     "mandiMarket": "Shimla / Koyambedu Wholesale",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 18000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-4",
     "name": "Juicy Nagpur Oranges",
     "category": "Fruits",
     "subCategory": "Citrus",
-    "price": 83.98,
+    "price": 84.03,
     "unit": "kg",
     "stock": 140,
     "rating": 4.7,
@@ -417,14 +417,14 @@
     "mandiMarket": "Nagpur / Coimbatore Wholesale",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 8500,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-5",
     "name": "Seedless Black Grapes (Sharad)",
     "category": "Fruits",
     "subCategory": "Berries",
-    "price": 108.75,
+    "price": 108.81,
     "unit": "kg",
     "stock": 95,
     "rating": 4.9,
@@ -447,14 +447,14 @@
     "mandiMarket": "Theni (Cumbum Valley) APMC",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 11000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-6",
     "name": "Striped Sweet Watermelon",
     "category": "Fruits",
     "subCategory": "Melons",
-    "price": 74.19,
+    "price": 74.24,
     "unit": "piece",
     "stock": 60,
     "rating": 4.8,
@@ -477,14 +477,14 @@
     "mandiMarket": "Tindivanam / Villupuram Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 2200,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-7",
     "name": "Red Lady Sweet Papaya",
     "category": "Fruits",
     "subCategory": "Tropical",
-    "price": 44.54,
+    "price": 44.57,
     "unit": "piece",
     "stock": 70,
     "rating": 4.8,
@@ -507,14 +507,14 @@
     "mandiMarket": "Coimbatore / Sathyamangalam Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 3000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-8",
     "name": "Country White Guava",
     "category": "Fruits",
     "subCategory": "Tropical",
-    "price": 59.42,
+    "price": 59.46,
     "unit": "kg",
     "stock": 90,
     "rating": 4.7,
@@ -537,14 +537,14 @@
     "mandiMarket": "Dindigul / Ayakudi Guava Market",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 6000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-9",
     "name": "Vazhakulam Queen Pineapple",
     "category": "Fruits",
     "subCategory": "Tropical",
-    "price": 64.42,
+    "price": 64.45,
     "unit": "piece",
     "stock": 55,
     "rating": 4.9,
@@ -567,14 +567,14 @@
     "mandiMarket": "Vazhakulam / Cumbum Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 4500,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "fruit-10",
     "name": "Ruby Red Pomegranate",
     "category": "Fruits",
     "subCategory": "Arils",
-    "price": 162.4,
+    "price": 162.5,
     "unit": "kg",
     "stock": 100,
     "rating": 4.9,
@@ -597,14 +597,14 @@
     "mandiMarket": "Solapur / Coimbatore APMC",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 16000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-1",
     "name": "Aged Thanjavur Ponni Rice",
     "category": "Grains & Cereals",
     "subCategory": "Rice",
-    "price": 62.08,
+    "price": 62.12,
     "unit": "kg",
     "stock": 350,
     "rating": 4.9,
@@ -627,14 +627,14 @@
     "mandiMarket": "Thanjavur / Alangudi Regulated Market",
     "mandiSource": "eNAM",
     "wholesaleRatePerQuintal": 6800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-2",
     "name": "Sharbati Golden Whole Wheat",
     "category": "Grains & Cereals",
     "subCategory": "Wheat",
-    "price": 44.7,
+    "price": 44.73,
     "unit": "kg",
     "stock": 280,
     "rating": 4.8,
@@ -657,14 +657,14 @@
     "mandiMarket": "Sehore / Coimbatore Grain Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 4600,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-3",
     "name": "Sun-Dried Sweet Yellow Corn (Maize)",
     "category": "Grains & Cereals",
     "subCategory": "Maize",
-    "price": 31.12,
+    "price": 31.14,
     "unit": "kg",
     "stock": 190,
     "rating": 4.7,
@@ -687,14 +687,14 @@
     "mandiMarket": "Udumalpet / Kangeyam Regulated Market",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 3200,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-4",
     "name": "Ancient Native Finger Millet (Ragi)",
     "category": "Grains & Cereals",
     "subCategory": "Millets",
-    "price": 46.7,
+    "price": 46.73,
     "unit": "kg",
     "stock": 220,
     "rating": 5,
@@ -717,14 +717,14 @@
     "mandiMarket": "Dharmapuri / Krishnagiri Regulated Market",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 4800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-5",
     "name": "Country Pearl Millet (Bajra)",
     "category": "Grains & Cereals",
     "subCategory": "Millets",
-    "price": 40.89,
+    "price": 40.92,
     "unit": "kg",
     "stock": 170,
     "rating": 4.8,
@@ -747,14 +747,14 @@
     "mandiMarket": "Thoothukudi / Kovilpatti Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 4200,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-6",
     "name": "Great White Sorghum (Jowar)",
     "category": "Grains & Cereals",
     "subCategory": "Millets",
-    "price": 46.76,
+    "price": 46.79,
     "unit": "kg",
     "stock": 160,
     "rating": 4.7,
@@ -777,14 +777,14 @@
     "mandiMarket": "Tiruppur / Palladam Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 4800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-7",
     "name": "Hulled Pearled Barley (Jau)",
     "category": "Grains & Cereals",
     "subCategory": "Barley",
-    "price": 58.49,
+    "price": 58.52,
     "unit": "kg",
     "stock": 110,
     "rating": 4.7,
@@ -807,14 +807,14 @@
     "mandiMarket": "Erode / Coimbatore Grain Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 6000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-8",
     "name": "Whole Grain Rolled Oats",
     "category": "Grains & Cereals",
     "subCategory": "Oats",
-    "price": 107.29,
+    "price": 107.36,
     "unit": "pack",
     "stock": 130,
     "rating": 4.8,
@@ -837,14 +837,14 @@
     "mandiMarket": "Tamil Nadu Organic Growers Guild",
     "mandiSource": "eNAM",
     "wholesaleRatePerQuintal": 11000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-9",
     "name": "Organic Foxtail Millet (Thinai)",
     "category": "Grains & Cereals",
     "subCategory": "Millets",
-    "price": 82.96,
+    "price": 83.01,
     "unit": "kg",
     "stock": 140,
     "rating": 4.9,
@@ -867,14 +867,14 @@
     "mandiMarket": "Jawadhu Hills / Tiruvannamalai Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 8500,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "grain-10",
     "name": "Little Millet (Samai Grains)",
     "category": "Grains & Cereals",
     "subCategory": "Millets",
-    "price": 88,
+    "price": 88.05,
     "unit": "kg",
     "stock": 150,
     "rating": 4.8,
@@ -897,14 +897,14 @@
     "mandiMarket": "Dharmapuri / Salem Regulated Market",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 8800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-1",
     "name": "Unpolished Desi Toor Dal",
     "category": "Pulses & Legumes",
     "subCategory": "Lentils",
-    "price": 165.58,
+    "price": 165.68,
     "unit": "kg",
     "stock": 260,
     "rating": 4.9,
@@ -927,14 +927,14 @@
     "mandiMarket": "Gulbarga / Chennai Wholesale Pulse Market",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 16800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-2",
     "name": "Golden Yellow Moong Dal",
     "category": "Pulses & Legumes",
     "subCategory": "Lentils",
-    "price": 133.14,
+    "price": 133.22,
     "unit": "kg",
     "stock": 210,
     "rating": 4.8,
@@ -957,14 +957,14 @@
     "mandiMarket": "Erode / Madurai Regulated Market",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 13500,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-3",
     "name": "Whole White Urad Dal (Gundu)",
     "category": "Pulses & Legumes",
     "subCategory": "Lentils",
-    "price": 149.99,
+    "price": 150.08,
     "unit": "kg",
     "stock": 190,
     "rating": 5,
@@ -987,14 +987,14 @@
     "mandiMarket": "Tirunelveli / Villupuram APMC",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 15200,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-4",
     "name": "Split Bengal Gram (Chana Dal)",
     "category": "Pulses & Legumes",
     "subCategory": "Lentils",
-    "price": 102.69,
+    "price": 102.75,
     "unit": "kg",
     "stock": 175,
     "rating": 4.8,
@@ -1017,14 +1017,14 @@
     "mandiMarket": "Indore / Coimbatore Pulse Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 10400,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-5",
     "name": "Red Masoor Dal (Split)",
     "category": "Pulses & Legumes",
     "subCategory": "Lentils",
-    "price": 96.82,
+    "price": 96.88,
     "unit": "kg",
     "stock": 140,
     "rating": 4.7,
@@ -1047,14 +1047,14 @@
     "mandiMarket": "Kanpur / Chennai Grain Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 9800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-6",
     "name": "Kabuli White Chickpeas (Chole)",
     "category": "Pulses & Legumes",
     "subCategory": "Beans",
-    "price": 143.35,
+    "price": 143.43,
     "unit": "kg",
     "stock": 160,
     "rating": 4.9,
@@ -1077,14 +1077,14 @@
     "mandiMarket": "Bhopal / Coimbatore Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 14500,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-7",
     "name": "Whole Green Mung Beans",
     "category": "Pulses & Legumes",
     "subCategory": "Beans",
-    "price": 126.62,
+    "price": 126.69,
     "unit": "kg",
     "stock": 180,
     "rating": 4.9,
@@ -1107,14 +1107,14 @@
     "mandiMarket": "Perambalur / Thanjavur Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 12800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-8",
     "name": "Whole Black Gram with Husk",
     "category": "Pulses & Legumes",
     "subCategory": "Beans",
-    "price": 136.59,
+    "price": 136.68,
     "unit": "kg",
     "stock": 120,
     "rating": 4.8,
@@ -1137,14 +1137,14 @@
     "mandiMarket": "Cuddalore / Villupuram Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 13800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-9",
     "name": "Red Kidney Beans (Chitra Rajma)",
     "category": "Pulses & Legumes",
     "subCategory": "Beans",
-    "price": 156.48,
+    "price": 156.58,
     "unit": "kg",
     "stock": 150,
     "rating": 4.9,
@@ -1167,14 +1167,14 @@
     "mandiMarket": "Jammu / Bangalore Wholesale",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 15800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "pulse-10",
     "name": "Native Brown Cowpeas (Karamani)",
     "category": "Pulses & Legumes",
     "subCategory": "Beans",
-    "price": 96.37,
+    "price": 96.43,
     "unit": "kg",
     "stock": 130,
     "rating": 4.7,
@@ -1197,14 +1197,14 @@
     "mandiMarket": "Virudhunagar / Kovilpatti Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 9500,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-1",
     "name": "Fresh A2 Desi Cow Milk",
     "category": "Dairy Products",
     "subCategory": "Milk",
-    "price": 66.37,
+    "price": 66.41,
     "unit": "litre",
     "stock": 80,
     "rating": 5,
@@ -1227,14 +1227,14 @@
     "mandiMarket": "Coimbatore Dairy Farmers Cooperative",
     "mandiSource": "Tamil Nadu Dairy Federation / eNAM",
     "wholesaleRatePerQuintal": 6800,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-2",
     "name": "Clay-Pot Set Thick Curd",
     "category": "Dairy Products",
     "subCategory": "Yogurt",
-    "price": 48.83,
+    "price": 48.86,
     "unit": "pack",
     "stock": 60,
     "rating": 4.9,
@@ -1257,14 +1257,14 @@
     "mandiMarket": "Pollachi Organic Dairy Farmstead",
     "mandiSource": "Tamil Nadu Dairy Federation",
     "wholesaleRatePerQuintal": 5000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-3",
     "name": "Soft Fresh Malai Paneer",
     "category": "Dairy Products",
     "subCategory": "Cheese",
-    "price": 117.26,
+    "price": 117.34,
     "unit": "pack",
     "stock": 50,
     "rating": 4.9,
@@ -1287,14 +1287,14 @@
     "mandiMarket": "Kangeyam Dairy Cluster",
     "mandiSource": "eNAM",
     "wholesaleRatePerQuintal": 48000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-4",
     "name": "Farmhouse Fresh White Butter (Makhan)",
     "category": "Dairy Products",
     "subCategory": "Butter",
-    "price": 156.45,
+    "price": 156.54,
     "unit": "pack",
     "stock": 45,
     "rating": 4.9,
@@ -1317,14 +1317,14 @@
     "mandiMarket": "Ooty Dairy Cooperative Guild",
     "mandiSource": "Tamil Nadu Dairy Federation",
     "wholesaleRatePerQuintal": 64000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-5",
     "name": "Grass-Fed Desi Cow Ghee (Bilona)",
     "category": "Dairy Products",
     "subCategory": "Ghee",
-    "price": 831.64,
+    "price": 832.15,
     "unit": "litre",
     "stock": 90,
     "rating": 5,
@@ -1347,14 +1347,14 @@
     "mandiMarket": "Kangeyam Desi Cattle Breeders Guild",
     "mandiSource": "eNAM",
     "wholesaleRatePerQuintal": 85000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-6",
     "name": "Spiced Moru Buttermilk (Neer Mor)",
     "category": "Dairy Products",
     "subCategory": "Beverage",
-    "price": 29.37,
+    "price": 29.39,
     "unit": "litre",
     "stock": 70,
     "rating": 4.8,
@@ -1377,14 +1377,14 @@
     "mandiMarket": "Coimbatore Traditional Farm Dairies",
     "mandiSource": "Tamil Nadu Dairy Federation",
     "wholesaleRatePerQuintal": 3000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-7",
     "name": "Aged Farmstead Cheddar Cheese",
     "category": "Dairy Products",
     "subCategory": "Cheese",
-    "price": 274.29,
+    "price": 274.46,
     "unit": "pack",
     "stock": 35,
     "rating": 4.8,
@@ -1407,14 +1407,14 @@
     "mandiMarket": "Kodaikanal Artisan Cheese Guild",
     "mandiSource": "eNAM",
     "wholesaleRatePerQuintal": 112000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-8",
     "name": "Pure Thick Dairy Cream (Malai)",
     "category": "Dairy Products",
     "subCategory": "Cream",
-    "price": 107.82,
+    "price": 107.89,
     "unit": "pack",
     "stock": 40,
     "rating": 4.7,
@@ -1437,14 +1437,14 @@
     "mandiMarket": "Coimbatore Local Dairies",
     "mandiSource": "Tamil Nadu Dairy Federation",
     "wholesaleRatePerQuintal": 44000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-9",
     "name": "Badam & Saffron Flavoured Milk",
     "category": "Dairy Products",
     "subCategory": "Beverage",
-    "price": 49.04,
+    "price": 49.07,
     "unit": "piece",
     "stock": 65,
     "rating": 4.9,
@@ -1467,14 +1467,14 @@
     "mandiMarket": "Tamil Nadu Cooperative Creamery",
     "mandiSource": "Tamil Nadu Dairy Federation",
     "wholesaleRatePerQuintal": 20000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "dairy-10",
     "name": "Traditional Sweet Mango Lassi",
     "category": "Dairy Products",
     "subCategory": "Beverage",
-    "price": 45.22,
+    "price": 45.24,
     "unit": "piece",
     "stock": 55,
     "rating": 4.9,
@@ -1497,14 +1497,14 @@
     "mandiMarket": "Coimbatore Fresh Dairy Kiosk",
     "mandiSource": "Tamil Nadu Dairy Federation",
     "wholesaleRatePerQuintal": 18000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-1",
     "name": "Fresh Root Coriander (Kothamalli)",
     "category": "Herbs & Spices",
     "subCategory": "Fresh Herbs",
-    "price": 19.46,
+    "price": 19.47,
     "unit": "bunch",
     "stock": 150,
     "rating": 4.8,
@@ -1527,14 +1527,14 @@
     "mandiMarket": "Mettupalayam / Coimbatore Uzhavar Sandhai",
     "mandiSource": "Uzhavar Sandhai / AGMARKNET",
     "wholesaleRatePerQuintal": 2000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-2",
     "name": "Fragrant Country Pudina (Mint)",
     "category": "Herbs & Spices",
     "subCategory": "Fresh Herbs",
-    "price": 14.6,
+    "price": 14.61,
     "unit": "bunch",
     "stock": 130,
     "rating": 4.9,
@@ -1557,14 +1557,14 @@
     "mandiMarket": "Coimbatore / Erode Uzhavar Sandhai",
     "mandiSource": "Uzhavar Sandhai / AGMARKNET",
     "wholesaleRatePerQuintal": 1500,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-3",
     "name": "Salem Whole Golden Turmeric (Viral Manjal)",
     "category": "Herbs & Spices",
     "subCategory": "Whole Spices",
-    "price": 204.58,
+    "price": 204.71,
     "unit": "kg",
     "stock": 180,
     "rating": 5,
@@ -1587,14 +1587,14 @@
     "mandiMarket": "Salem / Erode Turmeric Regulated Market",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 21000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-4",
     "name": "Juicy Mountain Fresh Ginger (Inji)",
     "category": "Herbs & Spices",
     "subCategory": "Roots",
-    "price": 136.47,
+    "price": 136.56,
     "unit": "kg",
     "stock": 120,
     "rating": 4.8,
@@ -1617,14 +1617,14 @@
     "mandiMarket": "Wayanad / Coimbatore Spices Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 14000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-5",
     "name": "Hill Country Garlic (Malai Poondu)",
     "category": "Herbs & Spices",
     "subCategory": "Roots",
-    "price": 302.37,
+    "price": 302.56,
     "unit": "kg",
     "stock": 95,
     "rating": 4.9,
@@ -1647,14 +1647,14 @@
     "mandiMarket": "Kodaikanal (Poombarai) / Vadakarai Mandi",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 31000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-6",
     "name": "Malabar Tellicherry Black Pepper",
     "category": "Herbs & Spices",
     "subCategory": "Whole Spices",
-    "price": 156.16,
+    "price": 156.26,
     "unit": "pack",
     "stock": 140,
     "rating": 5,
@@ -1677,14 +1677,14 @@
     "mandiMarket": "Bodinaickanur / Cochin Spices Board",
     "mandiSource": "Spices Board India / AGMARKNET",
     "wholesaleRatePerQuintal": 75000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-7",
     "name": "Whole Fragrant Cumin Seeds (Jeeragam)",
     "category": "Herbs & Spices",
     "subCategory": "Whole Spices",
-    "price": 92.78,
+    "price": 92.83,
     "unit": "pack",
     "stock": 160,
     "rating": 4.8,
@@ -1707,14 +1707,14 @@
     "mandiMarket": "Unjha / Chennai Spices Exchange",
     "mandiSource": "AGMARKNET",
     "wholesaleRatePerQuintal": 45000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-8",
     "name": "Green Cardamom Pods (Elaichi)",
     "category": "Herbs & Spices",
     "subCategory": "Whole Spices",
-    "price": 283.39,
+    "price": 283.56,
     "unit": "pack",
     "stock": 85,
     "rating": 5,
@@ -1737,14 +1737,14 @@
     "mandiMarket": "Bodinaickanur / Idukki Cardamom Auction",
     "mandiSource": "Spices Board India / eNAM",
     "wholesaleRatePerQuintal": 280000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-9",
     "name": "True Ceylon Cinnamon Quills",
     "category": "Herbs & Spices",
     "subCategory": "Whole Spices",
-    "price": 132,
+    "price": 132.08,
     "unit": "pack",
     "stock": 75,
     "rating": 4.9,
@@ -1767,7 +1767,7 @@
     "mandiMarket": "Kollam / Coimbatore Spices Market",
     "mandiSource": "Spices Board India",
     "wholesaleRatePerQuintal": 135000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   },
   {
     "id": "spice-10",
@@ -1797,6 +1797,6 @@
     "mandiMarket": "Karamadai / Coimbatore Uzhavar Sandhai",
     "mandiSource": "Uzhavar Sandhai / AGMARKNET",
     "wholesaleRatePerQuintal": 1000,
-    "priceLastUpdated": "2026-10-06"
+    "priceLastUpdated": "2026-10-07"
   }
 ]

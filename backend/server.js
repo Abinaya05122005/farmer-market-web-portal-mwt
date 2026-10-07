@@ -88,7 +88,7 @@ app.use((req, res, next) => {
 });
 
 // Start standalone Server
-if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`🌾 Farmer Market Portal Backend running securely on http://localhost:${PORT}`);
   });
