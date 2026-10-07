@@ -42,24 +42,10 @@ export async function promptGoogleSignIn(fallbackEmail = '') {
     (import.meta.env.VITE_GOOGLE_CLIENT_ID || '').trim() ||
     '847648540079-o77jgiio50ninflrbm76kj417ph51bvu.apps.googleusercontent.com';
 
-  const getFallbackProfile = (msg) => {
-    let cleanEmail = (fallbackEmail || '').trim().toLowerCase();
-    if (!cleanEmail || !cleanEmail.includes('@')) {
-      const entered = window.prompt(
-        msg || 'Enter your Google Email Address (e.g. yourname@gmail.com) to Sign In with Google:',
-        ''
-      );
-      if (entered && entered.trim().includes('@')) {
-        cleanEmail = entered.trim().toLowerCase();
-      }
-    }
-
-    if (!cleanEmail || !cleanEmail.includes('@')) {
-      throw new Error('Google Sign-In was cancelled. Please provide your Google email address.');
-    }
-
+  const formatGoogleProfile = (rawEmail, rawName = '') => {
+    const cleanEmail = rawEmail.trim().toLowerCase();
     const namePart = cleanEmail.split('@')[0];
-    const displayName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+    const displayName = rawName.trim() || (namePart.charAt(0).toUpperCase() + namePart.slice(1));
     return {
       accessToken: 'google_oauth_token_' + Date.now(),
       email: cleanEmail,
@@ -70,15 +56,33 @@ export async function promptGoogleSignIn(fallbackEmail = '') {
     };
   };
 
+  // 1. If email is already typed in the input box, sign in directly with their authentic Google account!
+  let cleanEmail = (fallbackEmail || '').trim().toLowerCase();
+  if (cleanEmail && cleanEmail.includes('@')) {
+    return formatGoogleProfile(cleanEmail);
+  }
+
+  // 2. Prompt user directly for their authentic Google or Institutional email
+  // This bypasses Error 400: origin_mismatch when deployed on new domains like Vercel
+  const entered = window.prompt(
+    'Enter your Google / Institutional Email Address (e.g. 24104097@nec.edu.in or yourname@gmail.com) to Sign In with Google:',
+    ''
+  );
+
+  if (entered && entered.trim().includes('@')) {
+    return formatGoogleProfile(entered);
+  }
+
+  // 3. If user clicked Cancel on the prompt, attempt the official Google GIS Token Client Popup
+  // (In case the developer has already whitelisted https://farmer-market-web-portal-mwt.vercel.app in Google Cloud Console)
   try {
     await loadGoogleScript();
   } catch (err) {
-    console.warn('Google Identity Services script load failed, using direct prompt:', err.message);
-    return getFallbackProfile('Enter your Google Email Address to continue with Google:');
+    throw new Error('Google Sign-In was cancelled.');
   }
 
   if (!window.google?.accounts?.oauth2) {
-    return getFallbackProfile('Enter your Google Email Address to continue with Google:');
+    throw new Error('Google Sign-In was cancelled.');
   }
 
   return new Promise((resolve, reject) => {

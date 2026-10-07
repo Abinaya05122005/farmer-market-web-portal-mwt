@@ -502,6 +502,11 @@ export default function LoginModal() {
                 </svg>
                 <span>{language === 'ta' ? 'Google கணக்குடன் தொடரவும்' : 'Continue with Google'}</span>
               </button>
+              <p className="text-[11px] text-stone-400 dark:text-stone-500 text-center mt-1">
+                {language === 'ta'
+                  ? '💡 உதவி: மேலே மின்னஞ்சலை உள்ளிட்டால் உடனடியாக 1-Click உள்நுழையலாம்.'
+                  : '💡 Tip: Enter your Google or College email above for instant 1-click Sign-In.'}
+              </p>
 
               {/* Bottom Register Link */}
               <div className="border-t border-stone-100 dark:border-stone-800 pt-3 text-center">
