@@ -39,15 +39,18 @@ export const ProductProvider = ({ children }) => {
       setIsLoading(true);
       const res = await fetch('/api/products');
       if (res.ok) {
-        const data = await res.json();
-        if (data.success && Array.isArray(data.products) && data.products.length > 0) {
+        const contentType = res.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+          const data = await res.json();
+          if (data.success && Array.isArray(data.products) && data.products.length > 0) {
           const sanitized = data.products.map((p) => ({
             ...p,
             price: Number(p.price || 0),
             stock: Number(p.stock || 0),
           }));
-          setProducts(sanitized);
-          localStorage.setItem('farmstore_products', JSON.stringify(sanitized));
+            setProducts(sanitized);
+            localStorage.setItem('farmstore_products', JSON.stringify(sanitized));
+          }
         }
       }
     } catch (e) {

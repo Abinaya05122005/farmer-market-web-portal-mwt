@@ -73,6 +73,108 @@ export const buildTrackingSteps = (status, timestamps = {}) => {
   });
 };
 
+export const INITIAL_DEFAULT_ORDERS = [
+  {
+    id: 'ord-1001',
+    _id: 'ord-1001',
+    date: '2026-10-07',
+    buyerId: 'buyer-demo',
+    buyerName: 'Ananya Sharma',
+    buyerPhone: '+91 97100 11223',
+    deliveryAddress: '88 Race Course Road, Coimbatore',
+    deliveryCity: 'Coimbatore',
+    deliveryDistrict: 'Coimbatore',
+    farmerId: 'farmer-1',
+    farmerName: 'Selvam Organic Farms',
+    items: [
+      {
+        id: 'veg-1',
+        productId: 'veg-1',
+        name: 'Country Tomatoes (Nattu Thakkali)',
+        price: 28.5,
+        quantity: 3,
+        unit: 'kg',
+        farmerId: 'farmer-1',
+        farmerName: 'Selvam Organic Farms',
+        farmLocation: 'Coimbatore, Tamil Nadu',
+      },
+      {
+        id: 'veg-2',
+        productId: 'veg-2',
+        name: 'Small Sambhar Onions (Chinna Vengayam)',
+        price: 45.0,
+        quantity: 2,
+        unit: 'kg',
+        farmerId: 'farmer-1',
+        farmerName: 'Selvam Organic Farms',
+        farmLocation: 'Coimbatore, Tamil Nadu',
+      }
+    ],
+    totalAmount: 175.5,
+    status: 'Processing',
+    paymentMethod: 'UPI / Google Pay',
+    paymentStatus: 'Paid',
+    estimatedDelivery: 'Tomorrow Morning (8:00 AM)',
+    timestamps: { placed: 'Today, 09:30 AM', confirmed: 'Today, 09:45 AM' },
+    trackingSteps: [
+      { key: 'placed', title: 'Order Placed', desc: 'Received by FarmStore', done: true, current: false, time: 'Today, 09:30 AM' },
+      { key: 'confirmed', title: 'Harvest Confirmed', desc: 'Farmer packing produce', done: true, current: true, time: 'Today, 09:45 AM' },
+      { key: 'pickup', title: 'Dispatched to Delivery', desc: 'En route to local hub', done: false, current: false, time: 'Pending' },
+      { key: 'delivered', title: 'Delivered Fresh', desc: 'Completed', done: false, current: false, time: 'Pending' }
+    ],
+    createdAt: '2026-10-07T09:30:00.000Z'
+  },
+  {
+    id: 'ord-1002',
+    _id: 'ord-1002',
+    date: '2026-10-07',
+    buyerId: 'buyer-demo',
+    buyerName: 'Priya Sundaram',
+    buyerPhone: '+91 97100 67890',
+    deliveryAddress: '12 Alagesan Road, Kovilpatti',
+    deliveryCity: 'Kovilpatti',
+    deliveryDistrict: 'Thoothukudi',
+    farmerId: 'user-abi',
+    farmerName: 'Abinaya',
+    items: [
+      {
+        id: 'grain-1',
+        productId: 'grain-1',
+        name: 'Traditional Karuppu Kavuni Rice',
+        price: 135.0,
+        quantity: 2,
+        unit: 'kg',
+        farmerId: 'user-abi',
+        farmerName: 'Abinaya',
+        farmLocation: 'Kovilpatti, Tamil Nadu',
+      },
+      {
+        id: 'spice-5',
+        productId: 'spice-5',
+        name: 'Hill Country Garlic (Malai Poondu)',
+        price: 180.0,
+        quantity: 1,
+        unit: 'kg',
+        farmerId: 'user-abi',
+        farmerName: 'Abinaya',
+        farmLocation: 'Kovilpatti, Tamil Nadu',
+      }
+    ],
+    totalAmount: 450.0,
+    status: 'Pending',
+    paymentMethod: 'Cash on Delivery',
+    paymentStatus: 'Pending',
+    estimatedDelivery: 'Tomorrow Evening',
+    timestamps: { placed: 'Today, 11:15 AM' },
+    trackingSteps: [
+      { key: 'placed', title: 'Order Placed', desc: 'Received from Buyer', done: true, current: true, time: 'Today, 11:15 AM' },
+      { key: 'confirmed', title: 'Farmer Accepted', desc: 'Harvesting & packing', done: false, current: false, time: 'Pending' },
+      { key: 'delivered', title: 'Delivered', desc: 'Completed', done: false, current: false, time: 'Pending' }
+    ],
+    createdAt: '2026-10-07T11:15:00.000Z'
+  }
+];
+
 export const CartProvider = ({ children }) => {
   const { currentUser, allUsers = [], isFarmer } = useAuth();
 
@@ -90,10 +192,10 @@ export const CartProvider = ({ children }) => {
       const stored = localStorage.getItem('farmstore_all_orders');
       if (stored) {
         const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed)) return parsed;
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
       }
     } catch (e) {}
-    return [];
+    return INITIAL_DEFAULT_ORDERS;
   });
 
   const [orders, setOrders] = useState([]);
