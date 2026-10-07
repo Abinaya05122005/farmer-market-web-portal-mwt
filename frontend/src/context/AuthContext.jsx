@@ -333,7 +333,10 @@ export const AuthProvider = ({ children }) => {
 
       // 3. Resilient client-side fallback (guaranteed to work on Vercel or anywhere)
       if (!userObj) {
-        const cleanEmail = String(googleProfile.email || emailHint || 'abi@gmail.com').trim().toLowerCase();
+        const cleanEmail = String(googleProfile.email || emailHint || '').trim().toLowerCase();
+        if (!cleanEmail) {
+          throw new Error('Google authentication failed: Email address is missing.');
+        }
         const userName = googleProfile.name || (cleanEmail.split('@')[0].charAt(0).toUpperCase() + cleanEmail.split('@')[0].slice(1));
         const usersList = getStoredUsersList();
         const existing = usersList.find((u) => u.email?.toLowerCase() === cleanEmail);
@@ -343,13 +346,13 @@ export const AuthProvider = ({ children }) => {
           _id: existing?._id || '64a00000000000000000' + Date.now().toString().slice(-4),
           name: userName,
           email: cleanEmail,
-          role: selectedRole || existing?.role || 'farmer',
-          avatar: googleProfile.picture || existing?.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80',
+          role: selectedRole || existing?.role || 'buyer',
+          avatar: googleProfile.picture || existing?.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}&background=15803d&color=fff&bold=true`,
           city: existing?.city || 'Kovilpatti',
           district: existing?.district || 'Thoothukudi',
           state: existing?.state || 'Tamil Nadu',
           farmLocation: selectedRole === 'farmer' ? (existing?.farmLocation || 'Kovilpatti, Tamil Nadu') : '',
-          farmName: selectedRole === 'farmer' ? (existing?.farmName || `${userName}'s Organic Farm`) : '',
+          farmName: selectedRole === 'farmer' ? (existing?.farmName || `${userName}'s Farm`) : '',
           vehicleType: selectedRole === 'delivery' ? 'Electric Cargo Van (TN-38-AF-2024)' : '',
           serviceArea: selectedRole === 'delivery' ? 'Kovilpatti & Regional Hub' : '',
           token: googleProfile.accessToken || `token-${Date.now()}`,
@@ -375,21 +378,10 @@ export const AuthProvider = ({ children }) => {
       return { success: true, user: userObj };
     } catch (error) {
       console.error('Google Sign-In caught:', error);
-      const fallbackEmail = String(emailHint || 'abi@gmail.com').trim().toLowerCase();
-      const fallbackUser = {
-        id: 'google-user-' + Date.now(),
-        name: 'Google User',
-        email: fallbackEmail,
-        role: selectedRole || 'farmer',
-        farmLocation: 'Kovilpatti, Tamil Nadu',
-        farmName: "Abinaya's Organic Farm",
-        token: 'token-' + Date.now(),
-        verified: true,
+      return {
+        success: false,
+        message: error.message || 'Google Sign-In was cancelled or failed.',
       };
-      setCurrentUser(fallbackUser);
-      localStorage.setItem('farmstore_user', JSON.stringify(fallbackUser));
-      closeLoginModal();
-      return { success: true, user: fallbackUser };
     }
   };
 

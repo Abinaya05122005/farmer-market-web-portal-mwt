@@ -478,9 +478,12 @@ export const CartProvider = ({ children }) => {
         body: JSON.stringify(newOrder),
       });
       if (res.ok) {
-        const data = await res.json();
-        if (data.success && data.order) {
-          finalOrder = { ...newOrder, ...data.order };
+        const cType = res.headers.get('content-type') || '';
+        if (cType.includes('application/json')) {
+          const data = await res.json();
+          if (data.success && data.order) {
+            finalOrder = { ...newOrder, ...data.order };
+          }
         }
       }
     } catch (e) {

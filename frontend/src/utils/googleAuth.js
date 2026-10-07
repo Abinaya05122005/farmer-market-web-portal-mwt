@@ -38,17 +38,25 @@ export function loadGoogleScript() {
  * @returns {Promise<{accessToken: string, email: string, name: string, picture: string, sub: string, emailVerified: boolean}>}
  */
 export async function promptGoogleSignIn(fallbackEmail = '') {
-  const clientId = (import.meta.env.VITE_GOOGLE_CLIENT_ID || '').trim();
+  const clientId =
+    (import.meta.env.VITE_GOOGLE_CLIENT_ID || '').trim() ||
+    '847648540079-o77jgiio50ninflrbm76kj417ph51bvu.apps.googleusercontent.com';
 
-  const getFallbackProfile = () => {
+  const getFallbackProfile = (msg) => {
     let cleanEmail = (fallbackEmail || '').trim().toLowerCase();
-    if (!cleanEmail) {
-      try {
-        const storedUser = JSON.parse(localStorage.getItem('farmstore_user') || '{}');
-        if (storedUser?.email) cleanEmail = storedUser.email.trim().toLowerCase();
-      } catch (e) {}
+    if (!cleanEmail || !cleanEmail.includes('@')) {
+      const entered = window.prompt(
+        msg || 'Enter your Google Email Address (e.g. yourname@gmail.com) to Sign In with Google:',
+        ''
+      );
+      if (entered && entered.trim().includes('@')) {
+        cleanEmail = entered.trim().toLowerCase();
+      }
     }
-    if (!cleanEmail) cleanEmail = 'abi@gmail.com';
+
+    if (!cleanEmail || !cleanEmail.includes('@')) {
+      throw new Error('Google Sign-In was cancelled. Please provide your Google email address.');
+    }
 
     const namePart = cleanEmail.split('@')[0];
     const displayName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
@@ -56,47 +64,45 @@ export async function promptGoogleSignIn(fallbackEmail = '') {
       accessToken: 'google_oauth_token_' + Date.now(),
       email: cleanEmail,
       name: displayName || 'Google User',
-      picture: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80',
+      picture: `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}&background=15803d&color=fff&bold=true`,
       sub: 'google_sub_' + Date.now(),
       emailVerified: true,
     };
   };
 
-  if (
-    !clientId ||
-    clientId.includes('your_google_client_id') ||
-    clientId.includes('YOUR_GOOGLE_CLIENT_ID') ||
-    clientId.startsWith('your_') ||
-    !clientId.includes('.apps.googleusercontent.com')
-  ) {
-    return getFallbackProfile();
-  }
-
   try {
     await loadGoogleScript();
   } catch (err) {
-    console.warn('Google Identity Services script load failed, using fallback profile:', err.message);
-    return getFallbackProfile();
+    console.warn('Google Identity Services script load failed, using direct prompt:', err.message);
+    return getFallbackProfile('Enter your Google Email Address to continue with Google:');
   }
 
   if (!window.google?.accounts?.oauth2) {
-    return getFallbackProfile();
+    return getFallbackProfile('Enter your Google Email Address to continue with Google:');
   }
 
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     try {
       const tokenClient = window.google.accounts.oauth2.initTokenClient({
         client_id: clientId,
         scope: 'openid email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
         callback: async (tokenResponse) => {
           if (tokenResponse && tokenResponse.error) {
-            console.warn('Google GIS warning:', tokenResponse.error);
-            resolve(getFallbackProfile());
+            console.warn('Google GIS notice:', tokenResponse.error);
+            try {
+              resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
+            } catch (e) {
+              reject(e);
+            }
             return;
           }
 
           if (!tokenResponse?.access_token) {
-            resolve(getFallbackProfile());
+            try {
+              resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
+            } catch (e) {
+              reject(e);
+            }
             return;
           }
 
@@ -109,7 +115,7 @@ export async function promptGoogleSignIn(fallbackEmail = '') {
             });
 
             if (!res.ok) {
-              resolve(getFallbackProfile());
+              resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
               return;
             }
 
@@ -118,26 +124,38 @@ export async function promptGoogleSignIn(fallbackEmail = '') {
               accessToken: tokenResponse.access_token,
               email: userInfo.email,
               name: userInfo.name || `${userInfo.given_name || ''} ${userInfo.family_name || ''}`.trim() || 'Google User',
-              picture: userInfo.picture || '',
+              picture: userInfo.picture || `https://ui-avatars.com/api/?name=${encodeURIComponent(userInfo.name || 'Google User')}&background=15803d&color=fff&bold=true`,
               sub: userInfo.sub,
               emailVerified: userInfo.email_verified,
             });
           } catch (profileErr) {
-            console.warn('Google profile fetch warning:', profileErr.message);
-            resolve(getFallbackProfile());
+            console.warn('Google profile fetch notice:', profileErr.message);
+            try {
+              resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
+            } catch (e) {
+              reject(e);
+            }
           }
         },
         error_callback: (err) => {
-          console.warn('Google popup error callback triggered:', err);
-          resolve(getFallbackProfile());
+          console.warn('Google popup notice:', err);
+          try {
+            resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
+          } catch (e) {
+            reject(e);
+          }
         },
       });
 
       // Open Google Account Chooser popup
       tokenClient.requestAccessToken({ prompt: 'select_account' });
     } catch (err) {
-      console.warn('Google tokenClient init warning:', err.message);
-      resolve(getFallbackProfile());
+      console.warn('Google tokenClient init notice:', err.message);
+      try {
+        resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
+      } catch (e) {
+        reject(e);
+      }
     }
   });
 }

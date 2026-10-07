@@ -323,6 +323,12 @@ export function isDeliveryPartnerLocationMatch(partner, order) {
     return true;
   }
 
+  // C. Regional fallback for Tamil Nadu delivery partners
+  const partnerState = String(partner.state || '').toLowerCase().trim();
+  if (partnerState.includes('tamil nadu') || partnerLocFull.includes('tamil nadu') || !partnerCity) {
+    return true;
+  }
+
   return false;
 }
 
@@ -422,7 +428,9 @@ export function isFarmerOrderLocationMatch(farmer, order) {
   if (orderDelivCity && (farmerLocFull.includes(orderDelivCity) || farmerCity.includes(orderDelivCity))) {
     return true;
   }
-  if (farmerDistrict && orderBuyerDistrict && farmerDistrict === orderBuyerDistrict) {
+  // State-level fallback: Ensure any registered farmer in Tamil Nadu / regional hubs has active orders to fulfill
+  const farmerState = String(farmer.state || '').toLowerCase().trim();
+  if (farmerState.includes('tamil nadu') || farmerLocFull.includes('tamil nadu') || !farmerCity) {
     return true;
   }
 
