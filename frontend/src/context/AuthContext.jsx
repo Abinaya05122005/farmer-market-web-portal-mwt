@@ -300,7 +300,7 @@ export const AuthProvider = ({ children }) => {
   const loginWithGoogle = async (selectedRole = 'buyer', emailHint = '') => {
     try {
       // 1. Launch official Google Account Chooser popup & get authenticated Google profile
-      const googleProfile = await promptGoogleSignIn(emailHint);
+      const googleProfile = await promptGoogleSignIn();
 
       let userObj = null;
 

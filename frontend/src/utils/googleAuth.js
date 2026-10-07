@@ -37,52 +37,15 @@ export function loadGoogleScript() {
  * Triggers the official Google Account Chooser / Sign-In popup
  * @returns {Promise<{accessToken: string, email: string, name: string, picture: string, sub: string, emailVerified: boolean}>}
  */
-export async function promptGoogleSignIn(fallbackEmail = '') {
+export async function promptGoogleSignIn() {
   const clientId =
     (import.meta.env.VITE_GOOGLE_CLIENT_ID || '').trim() ||
     '847648540079-o77jgiio50ninflrbm76kj417ph51bvu.apps.googleusercontent.com';
 
-  const formatGoogleProfile = (rawEmail, rawName = '') => {
-    const cleanEmail = rawEmail.trim().toLowerCase();
-    const namePart = cleanEmail.split('@')[0];
-    const displayName = rawName.trim() || (namePart.charAt(0).toUpperCase() + namePart.slice(1));
-    return {
-      accessToken: 'google_oauth_token_' + Date.now(),
-      email: cleanEmail,
-      name: displayName || 'Google User',
-      picture: `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}&background=15803d&color=fff&bold=true`,
-      sub: 'google_sub_' + Date.now(),
-      emailVerified: true,
-    };
-  };
-
-  // 1. If email is already typed in the input box, sign in directly with their authentic Google account!
-  let cleanEmail = (fallbackEmail || '').trim().toLowerCase();
-  if (cleanEmail && cleanEmail.includes('@')) {
-    return formatGoogleProfile(cleanEmail);
-  }
-
-  // 2. Prompt user directly for their authentic Google or Institutional email
-  // This bypasses Error 400: origin_mismatch when deployed on new domains like Vercel
-  const entered = window.prompt(
-    'Enter your Google / Institutional Email Address (e.g. 24104097@nec.edu.in or yourname@gmail.com) to Sign In with Google:',
-    ''
-  );
-
-  if (entered && entered.trim().includes('@')) {
-    return formatGoogleProfile(entered);
-  }
-
-  // 3. If user clicked Cancel on the prompt, attempt the official Google GIS Token Client Popup
-  // (In case the developer has already whitelisted https://farmer-market-web-portal-mwt.vercel.app in Google Cloud Console)
-  try {
-    await loadGoogleScript();
-  } catch (err) {
-    throw new Error('Google Sign-In was cancelled.');
-  }
+  await loadGoogleScript();
 
   if (!window.google?.accounts?.oauth2) {
-    throw new Error('Google Sign-In was cancelled.');
+    throw new Error('Google Identity Services SDK is not loaded. Please check your internet connection.');
   }
 
   return new Promise((resolve, reject) => {
@@ -92,21 +55,13 @@ export async function promptGoogleSignIn(fallbackEmail = '') {
         scope: 'openid email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
         callback: async (tokenResponse) => {
           if (tokenResponse && tokenResponse.error) {
-            console.warn('Google GIS notice:', tokenResponse.error);
-            try {
-              resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
-            } catch (e) {
-              reject(e);
-            }
+            console.error('Google OAuth error:', tokenResponse.error);
+            reject(new Error(`Google Sign-In failed: ${tokenResponse.error}`));
             return;
           }
 
           if (!tokenResponse?.access_token) {
-            try {
-              resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
-            } catch (e) {
-              reject(e);
-            }
+            reject(new Error('Google Sign-In cancelled or no token received.'));
             return;
           }
 
@@ -119,7 +74,7 @@ export async function promptGoogleSignIn(fallbackEmail = '') {
             });
 
             if (!res.ok) {
-              resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
+              reject(new Error('Failed to retrieve user profile from Google.'));
               return;
             }
 
@@ -133,33 +88,21 @@ export async function promptGoogleSignIn(fallbackEmail = '') {
               emailVerified: userInfo.email_verified,
             });
           } catch (profileErr) {
-            console.warn('Google profile fetch notice:', profileErr.message);
-            try {
-              resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
-            } catch (e) {
-              reject(e);
-            }
+            console.error('Google profile fetch error:', profileErr);
+            reject(profileErr);
           }
         },
         error_callback: (err) => {
-          console.warn('Google popup notice:', err);
-          try {
-            resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
-          } catch (e) {
-            reject(e);
-          }
+          console.error('Google popup error callback:', err);
+          reject(new Error(err?.message || 'Google popup was closed or access was denied.'));
         },
       });
 
-      // Open Google Account Chooser popup
+      // Open official Google Account Chooser popup
       tokenClient.requestAccessToken({ prompt: 'select_account' });
     } catch (err) {
-      console.warn('Google tokenClient init notice:', err.message);
-      try {
-        resolve(getFallbackProfile('Enter your Google Email Address to continue:'));
-      } catch (e) {
-        reject(e);
-      }
+      console.error('Google tokenClient init error:', err);
+      reject(err);
     }
   });
 }
