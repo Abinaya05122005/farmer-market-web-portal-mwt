@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { initMySQL } from './config/mysql.js';
@@ -74,6 +75,28 @@ app.post('/api/voice/query', handleVoiceQuery);
 // Serve frontend static build in production
 const distPath = path.resolve(__dirname, '../frontend/dist');
 app.use(express.static(distPath));
+
+// Root endpoint for API inspection and Render status verification
+app.get('/', (req, res) => {
+  const indexPath = path.join(distPath, 'index.html');
+  if (fs.existsSync(indexPath)) {
+    return res.sendFile(indexPath);
+  }
+  return res.json({
+    status: 'online',
+    service: '🌾 Farmer Market Web Portal Backend API',
+    platform: 'Render Cloud Deployment',
+    uptime: `${Math.floor(process.uptime())}s`,
+    endpoints: {
+      health: '/api/health',
+      auth: '/api/auth',
+      products: '/api/products',
+      orders: '/api/orders',
+      admin: '/api/admin',
+      voiceQuery: '/api/voice/query',
+    },
+  });
+});
 
 app.use((req, res, next) => {
   if (req.url.startsWith('/api')) {
